@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Photo } from '../model/flickr-images';
@@ -12,7 +12,7 @@ import { State } from '../reducers';
 })
 export class ImageSearchComponent implements OnInit {
   imageList$!: Observable<Photo[]>;
-  loader = this.store.select(state => state.loader).pipe( loader => loader); // todo use ngrx Selector
+  loader = this.store.pipe(select(state => state.loader.isLoading)); // todo use ngrx Selector
 
   constructor(private store: Store<State>) { }
 

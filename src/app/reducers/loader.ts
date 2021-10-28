@@ -6,15 +6,15 @@ import {
 import { loaderStartAction, loaderStopAction } from '../actions/loader.actions';
 
 export interface LoaderState {
-  loader: boolean
+  isLoading: boolean
 }
 
 export const loaderState: LoaderState = {
-  loader: true
+  isLoading: false
 };
 
 export const loaderReducer: ActionReducer<LoaderState> = createReducer(
   loaderState,
-  on(loaderStartAction, (_state) => ({ loader: true })),
-  on(loaderStopAction, (_state) => ({ loader: false })),
+  on(loaderStartAction, (_state) => ({ isLoading: true })),
+  on(loaderStopAction, (_state) => ({ isLoading: false })),
 );

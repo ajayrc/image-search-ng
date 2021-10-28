@@ -3,7 +3,7 @@ export type Image = {
     title: string;
 }
 
-export interface Photo { // TODO MAKE TYPE AND NOT INTERFACE
+export type Photo = {
     id: string;
     owner: string;
     secret: string;
@@ -12,7 +12,7 @@ export interface Photo { // TODO MAKE TYPE AND NOT INTERFACE
     url: string;
 }
 
-export interface PhotoSearch {
+export type PhotoSearch = {
     photos: {
         photo: Photo[];
     };
