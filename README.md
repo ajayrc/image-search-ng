@@ -1,7 +1,7 @@
 # NgImageSearch - Images Search App
 
 `npm i`
-`npm run start`
+`npm run start` or `ng serve`
 
 # Problem:
 * Implement an Interface that allows users to to search for images using any FREE images search API such as:

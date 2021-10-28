@@ -1,16 +1,4 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
-  production: false
+  production: false,
+  API_KEY: '3b4f5cf3263623b40e30ca980d81623c' // fyi: this and auth can be moved to BFF layer using https://www.npmjs.com/package/flickr-sdk as suggested at https://ajayrc.medium.com/developing-backend-for-front-end-bff-checklist-best-practices-1c3eeecf30a6
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
