@@ -5,11 +5,12 @@ export type Image = {
 
 export type Photo = {
     id: string;
-    owner: string;
-    secret: string;
-    server: string;
     title: string;
     url: string;
+    owner: string;
+    ownerUrl: string;
+    secret?: string;
+    server?: string;
 }
 
 export type PhotoSearch = {

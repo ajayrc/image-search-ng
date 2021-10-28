@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container image-search">
   <div *ngIf="loader | async" class="d-flex justify-content-center m-4">
     <div class="spinner-border text-info" role="status">
       <span class="visually-hidden">Loading...</span>
@@ -10,12 +10,34 @@
       class="col-sm-12 col-md-6 col-lg-4 p-3"
       *ngFor="let image of imageList$ | async"
     >
-      <div class="card">
-        <img
-          src="{{ image.url }}_m.jpg"
-          title="{{ image.title }}"
-          class="gallery-image"
-        />
+      <div class="card bg-secondary text-warning text-center">
+        <div class="card-header">
+          <p class="card-text image-owner">
+            @uthor<a
+              href="{{ image.ownerUrl }}"
+              target="_blank"
+              class="card-link text-info"
+              >{{ image.owner }}</a
+            >
+          </p>
+        </div>
+        <div class="card-body">
+          <img
+            class="card-img gallery-image"
+            src="{{ image.url }}_m.jpg"
+            title="{{ image.title }}"
+            alt="result image"
+          />
+          <div class="card-footer">
+            <button
+              type="button"
+              class="btn btn-warning"
+              (click)="saveToFavorites(image)"
+            >
+              Save to Favorites
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,75 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add this image to favorites list</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <h5 class="text-primary">Image: {{ image?.title }}</h5>
+  <div
+    class="mt-4 p-2 border border-primary"
+    *ngIf="(favList$ | async)?.length! > 0"
+  >
+    <h5>Select a favourites' list to add this image to:</h5>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let favListItem of favList$ | async" class="list-group-item">
+        <a href="#" (click)="!!addImageToList(favListItem)">
+          <h6>{{ favListItem.title }}</h6>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="mt-4 p-2 border border-info">
+    <h5 class="text-info">Create a New Favorites list:</h5>
+    <form
+      [formGroup]="createFavroiteListForm"
+      novalidate
+      (ngSubmit)="onCreateFavroiteList()"
+      class="form-inline"
+    >
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          id="favitem_title"
+          formControlName="title"
+          placeholder="Name"
+          required
+          maxlength="50"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control mx-2"
+          id="favitem_description"
+          formControlName="description"
+          placeholder="Description"
+          required
+          maxlength="100"
+        />
+      </div>
+      <button
+        type="submit"
+        [disabled]="createFavroiteListForm.invalid"
+        class="btn btn-info mx-4 text-white"
+      >
+        +Create
+      </button>
+    </form>
+  </div>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="activeModal.close('Close click')"
+  >
+    Close
+  </button>
+</div>
