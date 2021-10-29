@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
 import { FLICKER_PERSON_URL, FLICKR_PHOTO_SEARCH_URL } from 'src/app/configs';
-import { Photo } from 'src/app/model/flickr-images';
+import { Photo } from 'src/app/state/model/flickr-images';
 
 @Injectable({
   providedIn: 'root', // todo provide only where needed

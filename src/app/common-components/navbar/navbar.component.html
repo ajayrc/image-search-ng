@@ -1,10 +1,13 @@
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand">Image Search Engine</a>
+      <a class="navbar-brand" href="/">Image Search Engine</a>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Photos/people/groups" aria-label="Search for photos, people or groups"
         (keyup)="search($event)">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+      <a class="navbar-brand" routerLink="favorites">
+        <img src="/assets/images/heart-69-128.png" width="30" height="30" alt="favorites">
+      </a>
     </div>
   </nav>

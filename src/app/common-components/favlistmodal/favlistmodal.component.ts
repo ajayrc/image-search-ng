@@ -3,10 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { favListAddImageAction, favListCreateAction } from '../actions/favlist.actions';
-import { Favourite } from '../model/favorites';
-import { Photo } from '../model/flickr-images';
-import { State } from '../reducers';
+import { favListAddImageAction, favListCreateAction } from '../../state/actions/favlist.actions';
+import { Favourite } from '../../state/model/favorites';
+import { Photo } from '../../state/model/flickr-images';
+import { State } from '../../state/reducers';
 
 @Component({
   selector: 'app-favlistmodal',

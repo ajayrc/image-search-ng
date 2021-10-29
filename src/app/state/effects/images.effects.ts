@@ -7,7 +7,7 @@ import {
   imagesReceivedAction,
 } from '../actions/images.actions';
 import { loaderStopAction } from '../actions/loader.actions';
-import { SearchService } from '../image-search/service/search.service';
+import { SearchService } from '../../image-search/service/search.service';
 
 @Injectable()
 export class ImageEffects {

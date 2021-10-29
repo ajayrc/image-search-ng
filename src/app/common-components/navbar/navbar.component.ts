@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { imagesGetAction } from '../actions/images.actions';
-import { loaderStartAction } from '../actions/loader.actions';
-import { State } from '../reducers';
+import { imagesGetAction } from '../../state/actions/images.actions';
+import { loaderStartAction } from '../../state/actions/loader.actions';
+import { State } from '../../state/reducers';
 
 @Component({
   selector: 'app-navbar',

@@ -1,0 +1,28 @@
+<h3 class="mt-2 text-center text-primary">Favorites</h3>
+<div class="p-2" *ngIf="(favList$ | async)?.length! > 0">
+  <ul class="list-group list-group-flush">
+    <li
+      *ngFor="let favListItem of favList$ | async; let i=index"
+      class="list-group-item"
+    >
+      <h6 class="text-primary">
+        ({{i}}){{ favListItem.title }} ({{ favListItem.description }})
+      </h6>
+      <div class="mt-2">
+        <ul class="list-group list-group-flush row">
+          <li *ngFor="let image of favListItem.images" class="list-group-item col-sm-12 col-md-6 col-lg-4 p-3">
+            <div class="card">
+              <div class="card-body">
+                <img
+                  src="{{ image.url }}"
+                  (click)="download(image)"
+                  class="card-img gallery-image"
+                />
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

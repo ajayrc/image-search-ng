@@ -3,9 +3,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { FavlistmodalComponent } from '../favlistmodal/favlistmodal.component';
-import { Photo } from '../model/flickr-images';
-import { State } from '../reducers';
+import { FavlistmodalComponent } from '../common-components/favlistmodal/favlistmodal.component';
+import { Photo } from '../state/model/flickr-images';
+import { State } from '../state/reducers';
 
 @Component({
   selector: 'app-image-search',
