@@ -3,8 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { favListAddImageAction, favListCreateAction } from '../../state/actions/favlist.actions';
-import { Favourite } from '../../state/model/favorites';
+import {
+  favListAddImageAction,
+  favListCreateAction,
+} from '../../state/actions/favlist.actions';
+import { Favorite } from '../../state/model/favorites';
 import { Photo } from '../../state/model/flickr-images';
 import { State } from '../../state/reducers';
 
@@ -18,7 +21,7 @@ export class FavlistmodalComponent implements OnInit {
 
   fakeUUID: number = 0; // this should come from Server as id of the newly inserted favorite list item
   createFavroiteListForm!: FormGroup;
-  favList$!: Observable<Favourite[]>;
+  favList$!: Observable<Favorite[]>;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -36,7 +39,7 @@ export class FavlistmodalComponent implements OnInit {
       title: this.fb.control(null, [
         Validators.required,
         Validators.minLength(2), // fyi - see https://github.com/angular/angular/issues/7407 for related markup
-      ]), 
+      ]),
       description: this.fb.control(null, [
         Validators.required,
         Validators.minLength(2),
@@ -44,9 +47,11 @@ export class FavlistmodalComponent implements OnInit {
     });
   }
 
-  addImageToList(listItem?: Favourite): boolean {
-    this.store.dispatch(favListAddImageAction({favItem: listItem!, image: this.image!})); // TODO create EFFECT rather than directly using Action here
-    return false; // required to have bootstap style for anchor andt to prevent default action
+  addImageToList(listItem?: Favorite): boolean {
+    this.store.dispatch(
+      favListAddImageAction({ favItem: listItem!, image: this.image! })
+    );
+    return false;
   }
 
   onCreateFavroiteList(): void {
@@ -61,7 +66,9 @@ export class FavlistmodalComponent implements OnInit {
 
     // add new fav list to state
     this.store.dispatch(
-      favListCreateAction({ favItem: { id: this.fakeUUID, title, description } })
+      favListCreateAction({
+        favItem: { id: this.fakeUUID, title, description },
+      })
     );
   }
 }

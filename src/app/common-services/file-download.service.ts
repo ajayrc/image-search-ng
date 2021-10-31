@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 
-declare var require: any;
-const FileSaver = require('file-saver');
+import { saveAs } from 'file-saver';
 
 @Injectable()
 export class DownloadService {
   constructor() {}
   downloadImage(url: string, name: string) {
-    FileSaver.saveAs(url, name);
+    saveAs(url, name);
   }
 }

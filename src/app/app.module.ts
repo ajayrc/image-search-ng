@@ -18,6 +18,7 @@ import { FavlistmodalComponent } from './common-components/favlistmodal/favlistm
 import { ReactiveFormsModule } from '@angular/forms';
 import { FavoritesmoduleModule } from './favoritesmodule/favoritesmodule.module';
 import { HomepageComponent } from './homepage/homepage.component';
+import { SearchService } from './image-search/service/search.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     }),
     FavoritesmoduleModule,
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

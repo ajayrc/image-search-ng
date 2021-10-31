@@ -4,16 +4,8 @@ import { FavoritespageComponent } from './favoritespage/favoritespage.component'
 import { FavoriteFeatureRoutingModule } from './favorite-routing.module';
 
 @NgModule({
-  declarations: [
-    FavoritespageComponent
-  ],
-  imports: [
-    CommonModule,
-    FavoriteFeatureRoutingModule,
-
-  ],
-  bootstrap: [
-    FavoritespageComponent
-  ]
+  declarations: [FavoritespageComponent],
+  imports: [CommonModule, FavoriteFeatureRoutingModule],
+  bootstrap: [FavoritespageComponent],
 })
-export class FavoritesmoduleModule { }
+export class FavoritesmoduleModule {}

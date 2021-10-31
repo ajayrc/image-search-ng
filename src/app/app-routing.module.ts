@@ -5,16 +5,29 @@ import { HomepageComponent } from './homepage/homepage.component';
 const routes: Routes = [
   {
     path: 'favorites',
-    loadChildren: () => import('./favoritesmodule/favoritesmodule.module').then(m => m.FavoritesmoduleModule)
+    loadChildren: () =>
+      import('./favoritesmodule/favoritesmodule.module').then(
+        (m) => m.FavoritesmoduleModule
+      ),
+  },
+  {
+    path: 'home',
+    component: HomepageComponent,
   },
   {
     path: '',
-    component: HomepageComponent
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: '*',
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

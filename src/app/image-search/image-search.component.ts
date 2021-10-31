@@ -6,30 +6,34 @@ import { map } from 'rxjs/operators';
 import { FavlistmodalComponent } from '../common-components/favlistmodal/favlistmodal.component';
 import { Photo } from '../state/model/flickr-images';
 import { State } from '../state/reducers';
+import { SearchService } from './service/search.service';
 
 @Component({
   selector: 'app-image-search',
   templateUrl: './image-search.component.html',
-  styleUrls: ['./image-search.component.scss']
+  styleUrls: ['./image-search.component.scss'],
+  providers: [SearchService],
 })
 export class ImageSearchComponent implements OnInit {
   imageList$!: Observable<Photo[]>;
-  loader = this.store.pipe(select(state => state.loader.isLoading)); // todo use ngrx Selector
+  loader = this.store.pipe(select((state) => state.loader.isLoading)); // todo use ngrx Selector
 
-  constructor(private store: Store<State>, private modalService: NgbModal) { }
+  constructor(private store: Store<State>, private modalService: NgbModal) {}
 
   ngOnInit(): void {
-    this.imageList$ = this.store.select(state => state.images)
+    this.imageList$ = this.store
+      .select((state) => state.images)
       .pipe(
-        map(data => {
-          return data.images
+        map((data) => {
+          return data.images;
         })
-      )
+      );
   }
 
   saveToFavorites(image: Photo) {
-    const modalRef = this.modalService.open(FavlistmodalComponent, { size: 'lg' }); 
+    const modalRef = this.modalService.open(FavlistmodalComponent, {
+      size: 'lg',
+    });
     modalRef.componentInstance.image = image;
   }
-
 }
