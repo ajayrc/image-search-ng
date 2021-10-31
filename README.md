@@ -27,7 +27,24 @@
 * Use `ngrx/store` for state management
 * Use `ngrx/effect` for handling side effects
 * Use any CSS preprocessor of your choice
-* The project should include a README file
+
+# Screenshots
+* Initial state with default value
+![0](./src/assets/wiki/0.png)
+![1](./src/assets/wiki/1.png)
+* Image search via flickr api with auto cancellation
+![2](./src/assets/wiki/2.png)
+* API Response of images and state updation
+![3](./src/assets/wiki/3.png)
+* Create new Favorites inline and add images to it
+![4](./src/assets/wiki/4.png)
+![5](./src/assets/wiki/5.png)
+* Favorites list page with images
+![6](./src/assets/wiki/6.png)
+* Change Fav item Title and Description inline
+![7](./src/assets/wiki/7.png)
+* Download image
+![8](./src/assets/wiki/8.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
 
